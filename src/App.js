@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import CounterF from './hooks/CounterF';
+import Users from './hooks/Users';
 
 function App() {
   return (
     <React.Fragment>
-        <CounterF />
+        <Users />
     </React.Fragment>
   );
 }
