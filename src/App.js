@@ -1,11 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Movie from './hoc/Movie';
+import CounterC from './hooks/CounterC';
+import CounterF from './hooks/CounterF';
 
 function App() {
   return (
-    <Movie id={1} /> 
+    <React.Fragment>
+        <CounterC />
+        <CounterF />
+    </React.Fragment>
   );
 }
 
