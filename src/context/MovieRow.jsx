@@ -3,13 +3,13 @@ import UserContext from './userContext';
 
 const MovieRow = () => {
 
-    const currentUser = useContext(UserContext);
+    const userContext = useContext(UserContext);
 
-    return (  
-        <div>
-            {currentUser.name}
-        </div>
-    );
+    return (
+		<div>
+			Movie Row {userContext.currentUser ? userContext.currentUser.name : ""}
+		</div>
+	);
 }
  
 export default MovieRow;

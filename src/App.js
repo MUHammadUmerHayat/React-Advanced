@@ -2,15 +2,28 @@ import React, { Component } from "react";
 import "./App.css";
 import MoviePage from "./context/MoviePage";
 import UserContext from "./context/userContext";
+import Login from "./context/Login";
 
 class App extends Component {
-	state = { currentUser: { name: "Noman" } };
+	handleLoggedIn = username => {
+		console.log("Getting the user: " + username);
+		const user = { name: "Mosh" };
+		this.setState({ currentUser: user });
+	};
+
+	state = { currentUser: null };
 
 	render() {
 		return (
-			<UserContext.Provider value={this.state.currentUser}>
+			<UserContext.Provider
+				value={{
+					currentUser: this.state.currentUser,
+					onLoggedIn: this.handleLoggedIn,
+				}}
+			>
 				<div>
 					<MoviePage />
+					<Login />
 				</div>
 			</UserContext.Provider>
 		);
